@@ -28,6 +28,10 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          # Pages 未設定の場合でもワークフローから自動で有効化する
+          # (ソース = GitHub Actions)。手動の Settings → Pages 操作が不要になる。
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
