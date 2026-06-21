@@ -1,0 +1,153 @@
+:root {
+  --bg: #05060a;
+  --panel: #0d1018;
+  --accent: #2bff88;
+  --accent-dim: #169a52;
+  --text: #d6f5e3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at 50% 0%, #11131d 0%, var(--bg) 70%);
+  color: var(--text);
+  font-family: "Courier New", monospace;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.game-wrapper {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(20px, 6vw, 32px);
+  letter-spacing: 6px;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent-dim);
+  margin-bottom: 12px;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: clamp(11px, 3vw, 14px);
+  padding: 8px 4px;
+  letter-spacing: 1px;
+}
+
+.hud strong {
+  color: var(--accent);
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #02030a;
+  border: 2px solid var(--accent-dim);
+  border-radius: 6px;
+  box-shadow: 0 0 24px rgba(43, 255, 136, 0.25);
+  image-rendering: pixelated;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 3, 10, 0.82);
+  border-radius: 6px;
+  transition: opacity 0.25s;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay-inner h2 {
+  font-size: clamp(20px, 6vw, 30px);
+  color: var(--accent);
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 12px var(--accent-dim);
+}
+
+.overlay-inner p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+button {
+  background: var(--accent);
+  color: #02030a;
+  border: none;
+  padding: 12px 32px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+button:hover {
+  box-shadow: 0 0 16px var(--accent);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.controls-help {
+  margin-top: 14px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.touch-controls {
+  display: none;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.touch-btn {
+  width: 72px;
+  height: 56px;
+  font-size: 22px;
+  background: var(--panel);
+  color: var(--accent);
+  border: 2px solid var(--accent-dim);
+}
+
+.touch-btn:active {
+  background: var(--accent-dim);
+  color: #02030a;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .touch-controls {
+    display: flex;
+  }
+}

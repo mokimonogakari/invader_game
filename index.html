@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>インベーダーゲーム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-wrapper">
+    <h1>INVADER GAME</h1>
+
+    <div class="hud">
+      <span>SCORE: <strong id="score">0</strong></span>
+      <span>HIGH: <strong id="highScore">0</strong></span>
+      <span>LV: <strong id="level">1</strong></span>
+      <span>LIFE: <strong id="lives">3</strong></span>
+    </div>
+
+    <div class="canvas-container">
+      <canvas id="game" width="480" height="600"></canvas>
+
+      <div id="overlay" class="overlay">
+        <div class="overlay-inner">
+          <h2 id="overlayTitle">INVADER GAME</h2>
+          <p id="overlayText">スペース / タップで開始</p>
+          <button id="startButton">START</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-help">
+      <p>操作: ← → 移動 / スペース 発射 / P 一時停止</p>
+      <div class="touch-controls">
+        <button class="touch-btn" id="btnLeft">◀</button>
+        <button class="touch-btn" id="btnFire">●</button>
+        <button class="touch-btn" id="btnRight">▶</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
