@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+      # 現状のデフォルトブランチ。github-pages 環境は既定でデフォルト
+      # ブランチからのデプロイのみ許可するため、ここからも公開できるようにする。
+      - claude/modest-curie-pfeytj
   workflow_dispatch:
 
 permissions:
